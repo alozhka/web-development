@@ -1,5 +1,6 @@
 <?php
   header("Content-Type:text/plain");
   $str = trim($_GET[text]);
-  $str = preg_replace('/\s+/', ' ', $str);
+  while( strpos($str,"  ")!==false)
+	$str = str_replace("  ", " ", $str);
   echo $str;
