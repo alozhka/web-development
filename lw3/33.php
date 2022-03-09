@@ -13,7 +13,7 @@ $cntUpCase = strlen(preg_replace("/[^A-ZА-ЯЁ]/", '', $pas));
 $cntLowCase = strlen(preg_replace("/[A-ZА-ЯЁ]/", '', $pas));
 $cntRecurent = $len - $cntUnique;
 //reability
-$reability = 4*$cntUnique + 4*$cntDigits + 2*($len - $cntUpCase) + 2*($len - $cntLowCase) - 2*$cntRecurent;
+//$reability = 4*$cntUnique + 4*$cntDigits + 2*($len - $cntUpCase) + 2*($len - $cntLowCase) - 2*$cntRecurent;
 if ($len <> 0) //есть хоть что-то
 {
     $reability += 4*$len;
@@ -37,6 +37,10 @@ if ($cntDigits == $len) //только цифры
 if (($cntUpCase + $cntLowCase) == $len) //только буквы
 {
     $reability -= $cntDigits;
+}
+if ($cntRecurent <> 0) //есть повторяющиеся
+{
+    $reability += $cntRecurent;
 }
 echo "password: ", $pas,"\n";
 echo "reability: ", $reability;
