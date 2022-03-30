@@ -26,7 +26,7 @@ body
 }
 .upper_frame_button
 {
-    margin: 0 0 0 0;
+    margin: 0 0 0 13px;
     background: black;
     border-radius: 10px;
 
@@ -43,7 +43,6 @@ body
     font-size: 16px;
     line-height: 16px;
 
-    margin: 0 auto;
     color: white
 }
 .upper_frame_stripe_main_text_bl

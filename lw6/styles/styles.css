@@ -14,15 +14,18 @@ body
 }
 .upper_frame_stripe
 {
-    margin: 0 auto;
+    margin: 30px 120px 43px 120px;
+    height: 55px
 }
 .upper_frame_stripe_main
 {
-    margin: 38px 0 0 120px;
+    margin: 8px 32px 0 0;
+    float: left
 }
 .upper_frame_stripe_sec
 {
-    margin: 0 auto;
+    margin: 18px 0 17px 662px;
+    float: left
 }
 .upper_frame_button
 {
@@ -32,18 +35,33 @@ body
 
     width: 247px;
     height: 55px;
+    float: right
 
 }
-.upper_frame_button_text
+.upper_frame_stripe_button_text
 {
-
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 16px;
 
-    margin: 0 auto;
+    text-align: center;
+    float: right;
+    margin: 19px 42px 19px 40px;
+    color: white
+}
+.upper_frame_button_text
+{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 16px;
+
+    text-align: center;
+    float: right;
+    margin: 19px 90px 0 0;
     color: white
 }
 .upper_frame_stripe_main_text_bl
@@ -76,6 +94,7 @@ body
 }
 .upper_frame_stripe_text
 {
+    margin: 42px 87px 0 0;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -86,10 +105,12 @@ body
 .upper_frame_main
 {
     margin: 0 auto;
+    height: 732px;
 }
 .upper_frame_main_header
 {
-    margin: 0 auto;
+    margin: 180px 30px 5px 178px;
+    float: left;
 }
 .upper_frame_main_header_text_bl
 {
@@ -110,10 +131,14 @@ body
 }
 .upper_frame_main_postext
 {
-    margin: 0 auto;
+    margin: 20px 0 46px 0;
+    width: 545px;
+    height: 62px;
 }
 .upper_frame_main_text
 {
+    margin: 0 auto;
+
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
@@ -125,7 +150,6 @@ body
 .upper_frame_main_button
 {
     margin: 0 0 0 0;
-    padding: 18.36px 34.425px;
     border-radius: 10px;
     background: black;
 
@@ -135,7 +159,9 @@ body
 
 .upper_frame_img
 {
-    margin: 0 0 0 0;
+    margin: 28px 205px 0 0;
+    float: right;
+
     width: 763px;
     height: 638px;
     background-image: url("../images/illustration.png");
@@ -145,12 +171,16 @@ body
 .black_frame
 {
     background: black;
-    width: 100%;
-    height: 100%/*398px*/;
+    height: 398px;
+    padding-left: 391px;
 }
 .black_frame_column
 {
-    margin-top: 111px;
+    margin: 111px 120px 0 0;
+    float: left;
+    width: 285px;
+    height: 145px
+
 }
 .black_frame_column_time
 {
@@ -182,20 +212,23 @@ body
 .sidebar_frame
 {
     margin: 0 auto;
+    padding-left: 358px;
 }
 .sidebar_finances
 {
-    margin: 72px 391px 0 393px
+    margin: 72px 391px 0 0;
+    height: 520px;
 }
 .sidebar_mind-blow
 {
-    margin: 0 392px 98px 393px
+    margin: 0 392px 98px 0
 }
 .sidebar_left_img
 {
-    margin: 137.41px 0 59.41px 0;
+    margin: 2px 0 0 0;
     width: 538px;
     height: 476px;
+    float: left;
 
     background-image: url("../images/finances.png");
     background-position: 0;
@@ -203,9 +236,10 @@ body
 }
 .sidebar_right_img
 {
-    margin: 0 0 0 631px;
+    margin: 34px 110px 0 0;
     width: 378px;
     height: 622px;
+    float: right;
 
     background-image: url("../images/mind_blowing.png");
     background-position: 0;
@@ -213,12 +247,19 @@ body
 }
 .sidebar_finances_main
 {
-    margin: 225.03px 0 0 0;
+    margin: 225px 7px 0 0;
+    float: right;
+    width: 574px;
+}
+.sidebar_mind-blow_main
+{
+    margin: 284px 0 0 27px;
+    float: left;
     width: 574px;
 }
 .sidebar_main_header
 {
-    margin-bottom: 25.97px;
+    margin: 225px 0 26px 0;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -227,6 +268,7 @@ body
 }
 .sidebar_main_text
 {
+    margin: 26px 0 0 0;
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
@@ -276,7 +318,8 @@ body
 }
 .table-image
 {
-    margin: 32px 281px 21px 39px;
+    float: right;
+    margin: 32px 281px 21px 39px
 }
 .table-text
 {
