@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 body
 {
     width: 1920px;
+    margin: 0 auto
 }
 .main_wrap
 {
@@ -19,23 +20,24 @@ body
 }
 .upper_frame_stripe_main
 {
-    margin: 8px 32px 0 0;
+    margin: 9px 32px 0 0;
     float: left
 }
 .upper_frame_stripe_sec
 {
-    margin: 18px 0 17px 662px;
+    margin: 19px 0 17px 667px;
     float: left
 }
 .upper_frame_button
 {
     margin: 0 0 0 0;
-    background: black;
     border-radius: 10px;
 
     width: 247px;
     height: 55px;
-    float: right
+    float: right;
+
+    background: #05090C
 
 }
 .upper_frame_stripe_button_text
@@ -43,12 +45,10 @@ body
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 16px;
 
     text-align: center;
-    float: right;
-    margin: 19px 42px 19px 40px;
     color: white
 }
 .upper_frame_button_text
@@ -56,19 +56,16 @@ body
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 16px;
 
     text-align: center;
-    float: right;
-    margin: 19px 90px 0 0;
     color: white
 }
 .upper_frame_stripe_main_text_bl
 {
     width: 203px;
     height: 40px;
-    left: 0px;
     top: 5px;
 
     font-family: 'Montserrat';
@@ -76,13 +73,14 @@ body
     font-weight: 700;
     font-size: 30.8354px;
     line-height: 122.33%;
+    letter-spacing: -0.045em;
     color: black
 }
 .upper_frame_stripe_main_text_pur
 {
     width: 203px;
     height: 40px;
-    left: 0px;
+    left: 0;
     top: 5px;
 
     font-family: 'Montserrat';
@@ -90,11 +88,13 @@ body
     font-weight: 700;
     font-size: 30.8354px;
     line-height: 122.33%;
+    letter-spacing: -0.045em;
+
     color: #ee58b6
 }
 .upper_frame_stripe_text
 {
-    margin: 42px 87px 0 0;
+    margin: 42px 83px 0 0;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -131,7 +131,7 @@ body
 }
 .upper_frame_main_postext
 {
-    margin: 20px 0 46px 0;
+    margin: 21px 0 46px 0;
     width: 545px;
     height: 62px;
 }
@@ -151,7 +151,7 @@ body
 {
     margin: 0 0 0 0;
     border-radius: 10px;
-    background: black;
+    background: #05090C;;
 
     width: 332px;
     height: 55px;
@@ -159,7 +159,7 @@ body
 
 .upper_frame_img
 {
-    margin: 28px 205px 0 0;
+    margin: 30px 205px 0 0;
     float: right;
 
     width: 763px;
@@ -172,33 +172,42 @@ body
 {
     background: black;
     height: 398px;
-    padding-left: 391px;
+    padding: 0 391px 0 391px;
+    display: flex;
+    justify-content: space-between;
 }
-.black_frame_column
+.black_frame_time
 {
-    margin: 111px 120px 0 0;
-    float: left;
-    width: 285px;
+    margin: 111px 0 0 0;
+    width: 340px;
     height: 145px
-
+}
+.black_frame_notebook
+{
+    margin: 111px 0 0 0;
+    width: 340px;
+    height: 145px
+}
+.black_frame_target
+{
+    margin: 111px 0 0 0;
+    width: 340px;
+    height: 100%
 }
 .black_frame_column_time
 {
-    margin: 5.41px 117.23px 20px 118px
+    margin: 0 0 15px 114px
 }
 .black_frame_column_notebook
 {
-    margin: 4.42px 147.73px 20px 146.42px
+    margin: 0 0 15px 140px
 }
 .black_frame_column_target
 {
-    margin: 3.93px 121.09px 20px 119.99px
+    margin: 0 0 15px 140px;
 }
 .black_frame_text
 {
-    margin: 0 auto;
-    height: 100%;
-
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
@@ -208,27 +217,52 @@ body
 
     color: white
 }
+.black_frame_text_time
+{
+    margin: 0 0 0 2px;
+    width: 90%;
+    text-align: center
+}
+.black_frame_text_notebook
+{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center
+}
+.black_frame_text_target
+{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center
+}
 /**/
 .sidebar_frame
 {
     margin: 0 auto;
     padding-left: 358px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 .sidebar_finances
 {
     margin: 72px 391px 0 0;
     height: 520px;
+    display: flex;
+    justify-content: space-between;
 }
 .sidebar_mind-blow
 {
-    margin: 0 392px 98px 0
+    margin: 0 392px 0 0;
+
+    display: flex;
+    justify-content: space-between;
 }
 .sidebar_left_img
 {
-    margin: 2px 0 0 0;
+    margin: 0 0 0 7px;
     width: 538px;
     height: 476px;
-    float: left;
 
     background-image: url("../images/finances.png");
     background-position: 0;
@@ -236,10 +270,9 @@ body
 }
 .sidebar_right_img
 {
-    margin: 34px 110px 0 0;
+    margin: 34px 102px 0 0;
     width: 378px;
     height: 622px;
-    float: right;
 
     background-image: url("../images/mind_blowing.png");
     background-position: 0;
@@ -247,28 +280,33 @@ body
 }
 .sidebar_finances_main
 {
-    margin: 225px 7px 0 0;
+    margin: 225px 0 0 11px;
     float: right;
     width: 574px;
+    height: 250px;
 }
 .sidebar_mind-blow_main
 {
-    margin: 284px 0 0 27px;
+    margin: 284px 0 0 34px;
     float: left;
     width: 574px;
 }
 .sidebar_main_header
 {
-    margin: 225px 0 26px 0;
+    margin: 224px 0 0 0;
     font-family: 'Montserrat';
+    float: none;
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
     line-height: 126.06%;
 }
+.sidebar_main_postext
+{
+    margin-top: 28px;
+}
 .sidebar_main_text
 {
-    margin: 26px 0 0 0;
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
@@ -280,11 +318,13 @@ body
 /**/
 .table_frame
 {
-    margin: 0 auto
+    margin: 0 auto;
+    height: 951px;
 }
 .table_frame-header
 {
-    margin: 0 auto
+    margin: 0 auto;
+    padding: 134px 0 0 684px
 }
 .table_frame-header-text-bl
 {
@@ -306,25 +346,38 @@ body
 
     color: #ee58b6
 }
+.table_frame-tables
+{
+    margin: 0 auto;
+    padding: 60px 395px 60px 395px;
+    height: 440px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
 .table
 {
     width: 358px;
     height: 190px;
-    left: 0px;
-    top: 0px;
 
     background: black;
     border-radius: 7.35723px;
 }
 .table-image
 {
-    float: right;
-    margin: 32px 281px 21px 39px
+    margin: 31px 281px 18px 40px
+}
+.table-postext
+{
+    margin: 0 30px 0 40px;
+}
+.table-postext_low
+{
+
 }
 .table-text
 {
-    margin: 21px 49px 0 39px;
-
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 400;
@@ -338,7 +391,9 @@ body
     width: 1920px;
     height: 108px;
     left: 1px;
-    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     background: black
 }
