@@ -27,7 +27,8 @@ body
 }
 .upper_frame_stripe_main
 {
-    margin: 9px 32px 0 0;
+    margin: 9px 0 0 0;
+    padding-right: 32px;
 }
 .upper_frame_stripe_sec
 {
@@ -192,10 +193,16 @@ body
 .black_frame
 {
     background: black;
-    height: 398px;
+    margin: 0;
+    width: 100%;
+}
+.black_frame_collumns
+{
+    margin: 111px 0 111px 0;
     padding: 0 391px 0 391px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap
 }
 .black_frame_time
 {
@@ -409,7 +416,7 @@ body
 }
 .bottom_stripe
 {
-    width: 1920px;
+    width: 100%;
     height: 108px;
     left: 1px;
     display: flex;
@@ -434,25 +441,6 @@ body
     color: white
 }
 
-@media screen and (max-width: 610px)
-{
-    .upper_frame_button {
-        width: 40%
-    }
-    .upper_frame_button_text {
-        font-size: 10px
-    }
-    .upper_frame_stripe_text {
-        font-size: 14px
-    }
-    .upper_frame_stripe_sec {
-        justify-content: space-between
-    }
-    .upper-frame-stripe-sec__questions
-    {
-        width: 200px
-    }
-}
 
 @media screen and (max-width: 907px)
 {
@@ -462,7 +450,8 @@ body
     .upper-frame-stripe-sec__questions {
         flex-direction: column;
         padding: 0;
-        width: 280px
+        width: auto;
+        margin: 0 auto 0 0
     }
     .upper_frame_stripe_main {
         margin-bottom: 20px
@@ -470,12 +459,65 @@ body
     .upper_frame_stripe_button_text {
         font-size: 14px;
     }
+    .upper_frame_main_header_text_bl {
+        font-size: 3em
+    }
+    .upper_frame_main_header_text_pur {
+        font-size: 3em
+    }
+    .upper_frame_stripe_sec {
+        margin-right: 0;
+    }
+    .upper_frame_button {
+        width: 40%
+    }
+    .upper_frame_stripe_button_text {
+        font-size: 10px
+    }
 }
+
+@media screen and (max-width: 610px)
+{
+    .upper_frame_stripe_text {
+        font-size: 14px
+    }
+    .upper_frame_stripe_sec {
+        justify-content: space-between;
+        width: 50%
+    }
+    .upper_frame_stripe_sec {
+        display: none
+    }
+    .upper_frame_main_header_text_bl {
+        font-size: 2em
+    }
+    .upper_frame_main_header_text_pur {
+        font-size: 2em
+    }
+    .upper_frame_main_text {
+        font-size: 0.95em
+    }
+    .upper_frame_main_button {
+        width: 60%;
+        margin: 0 auto 0 auto;
+        display: block
+    }
+    .upper_frame_main_postext {
+        margin: 10px 0 14px 0;
+    }
+    .upper_frame_button_text {
+        font-size: 12px
+    }
+}
+
 
 @media screen and (max-width: 1135px)
 {
-    .upper_frame_stripe {
-        justify-content: center;
+    .upper_frame_stripe_main {
+        margin: 9px auto 0 auto;
+    }
+    .upper_frame_stripe_sec {
+        margin: 0 auto 0 auto
     }
 }
 
