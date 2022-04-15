@@ -89,7 +89,7 @@ body
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 30.8354px;
+    font-size: 31px;
     line-height: 122.33%;
     letter-spacing: -0.045em;
     color: black
@@ -104,7 +104,7 @@ body
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 30.8354px;
+    font-size: 31px;
     line-height: 122.33%;
     letter-spacing: -0.045em;
 
@@ -193,46 +193,39 @@ body
 .black_frame
 {
     background: black;
-    margin: 0;
+    margin: 50px 0 0 0;
+    padding: 30px 0 30px 0;
+    min-height: 398px;
     width: 100%;
+
+    display: flex;
+    align-items: center;
 }
 .black_frame_collumns
 {
-    margin: 111px 0 111px 0;
-    padding: 0 391px 0 391px;
+    margin: 0 auto 0 auto;
+    padding: 0 5% 0 5%;
+    max-width: 1138px;
+    height: 100%;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap
 }
-.black_frame_time
+.black_frame_col
 {
-    margin: 111px 0 0 0;
-    width: 340px;
-    height: 145px
+    margin: 10px 0 10px 0;
+    max-width: 340px;
+    max-height: 145px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
 }
-.black_frame_notebook
+.black_frame_column_img
 {
-    margin: 111px 0 0 0;
-    width: 340px;
-    height: 145px
-}
-.black_frame_target
-{
-    margin: 111px 0 0 0;
-    width: 340px;
-    height: 100%
-}
-.black_frame_column_time
-{
-    margin: 0 0 15px 114px
-}
-.black_frame_column_notebook
-{
-    margin: 0 0 15px 140px
-}
-.black_frame_column_target
-{
-    margin: 0 0 15px 140px;
+    margin: 0 0 15px 0
 }
 .black_frame_text
 {
@@ -266,39 +259,43 @@ body
 /**/
 .sidebar_frame
 {
-    margin: 0 auto;
-    padding-left: 358px;
+    margin: 72px auto 0 auto;
+    max-width: 1135px;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 .sidebar_finances
 {
-    margin: 72px 391px 0 0;
-    height: 520px;
+    margin: 0 0 60px 0;
+
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap
 }
 .sidebar_mind-blow
 {
-    margin: 0 392px 0 0;
+    margin: 0;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap-reverse
 }
 .sidebar_left_img
 {
-    margin: 0 0 0 7px;
+    margin: 0;
     width: 538px;
-    height: 476px;
-
-    background-image: url("../images/finances.png");
-    background-position: 0;
-    background-repeat: no-repeat
+    max-width: 100%;
+    height: 476px
+}
+.sidebar-left__image {
+    margin: 0 auto;
 }
 .sidebar_right_img
 {
-    margin: 34px 102px 0 0;
+    margin: 5% 146px 0 0;
     width: 378px;
     height: 622px;
 
@@ -308,7 +305,7 @@ body
 }
 .sidebar_finances_main
 {
-    margin: 225px 0 0 11px;
+    margin: 225px 20px 0 0;
     float: right;
     width: 574px;
     height: 250px;
@@ -346,16 +343,25 @@ body
 /**/
 .table_frame
 {
-    margin: 0 auto;
-    height: 951px;
+    margin: 15px 0 15px 0
+}
+.table-frame-head
+{
+    padding: 0 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 .table_frame-header
 {
-    margin: 0 auto;
-    padding: 134px 0 0 684px
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
 }
 .table_frame-header-text-bl
 {
+    margin-right: 12px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -377,20 +383,21 @@ body
 .table_frame-tables
 {
     margin: 0 auto;
-    padding: 60px 395px 60px 395px;
-    height: 440px;
+    max-width: 1170px;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-flow: row wrap;
 }
 .table
 {
-    width: 358px;
+    max-width: 358px;
+    width: 90%;
     height: 190px;
+    margin: 15px;
 
     background: black;
-    border-radius: 7.35723px;
+    border-radius: 7px;
 }
 .table-image
 {
@@ -434,7 +441,7 @@ body
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 30.8354px;
+    font-size: 31px;
     line-height: 122.33%;
     letter-spacing: -0.045em;
 
@@ -471,13 +478,22 @@ body
     .upper_frame_button {
         width: 40%
     }
-    .upper_frame_stripe_button_text {
-        font-size: 10px
+    .black_frame_text {
+        font-size: 20px
     }
 }
 
 @media screen and (max-width: 610px)
 {
+    .table_frame-header-text-bl {
+        font-size: 1.8em
+    }
+    .table_frame-header-text-pur {
+        font-size: 1.8em
+    }
+    .upper_frame_stripe_button_text {
+        font-size: 10px
+    }
     .upper_frame_stripe_text {
         font-size: 14px
     }
@@ -508,9 +524,23 @@ body
     .upper_frame_button_text {
         font-size: 12px
     }
+    .black_frame_text {
+        font-size: 14px
+    }
+    .sidebar-left__image {
+        width: 100%
+    }
+    .sidebar_left_img {
+        max-width: 100%
+    }
+    .sidebar_right_img {
+        width: 100%
+    }
 }
 
-
+@media screen and (max-width: 1128px)
+{
+}
 @media screen and (max-width: 1135px)
 {
     .upper_frame_stripe_main {
@@ -527,7 +557,6 @@ body
         margin: 0 30px 0 20px;
     }
     .upper-frame__image {
-        margin: 0 20px 0 20px;
         width: 95%
     }
 }
