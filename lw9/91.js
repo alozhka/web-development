@@ -9,13 +9,23 @@
     function isPrimeNumber(Number) {
         const type = typeof (Number)
         switch (type) {
-            case "number":
+            case "number": {
                 if (PrimeCheck(Number))
-                    return Number + " is Prime number"
+                    console.log(Number + " is Prime number")
                 else
-                    return Number + " is not Prime number"
+                    console.log(Number + " is not Prime number")
+                break
+            }
             case "object": {
-
+                for (let i = 0; i < Number.length; i++)
+                    if (PrimeCheck(Number[i]))
+                        console.log(Number[i] + " is Prime number")
+                    else
+                        console.log(Number[i] + " is not Prime number")
+                break
+            }
+            default: {
+                alert("[!] Can't identify")
             }
         }
     }
