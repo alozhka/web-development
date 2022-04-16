@@ -286,35 +286,32 @@ body
 .sidebar_left_img
 {
     margin: 0;
-    width: 538px;
-    max-width: 100%;
-    height: 476px
+    max-width: 538px;
+    width: 100%
 }
-.sidebar-left__image {
+.sidebar-left__image
+{
     margin: 0 auto;
 }
 .sidebar_right_img
 {
-    margin: 5% 146px 0 0;
-    width: 378px;
-    height: 622px;
-
-    background-image: url("../images/mind_blowing.png");
-    background-position: 0;
-    background-repeat: no-repeat
+    margin: 5% 153px 0 82px;
+    max-width: 378px;
+    width: 100%
+}
+.sidebar-right__image
+{
+    margin: 0;
 }
 .sidebar_finances_main
 {
     margin: 225px 20px 0 0;
-    float: right;
-    width: 574px;
-    height: 250px;
+    max-width: 574px;
 }
 .sidebar_mind-blow_main
 {
     margin: 284px 0 0 34px;
-    float: left;
-    width: 574px;
+    max-width: 574px;
 }
 .sidebar_main_header
 {
@@ -530,16 +527,26 @@ body
     .sidebar-left__image {
         width: 100%
     }
-    .sidebar_left_img {
-        max-width: 100%
-    }
     .sidebar_right_img {
-        width: 100%
+        width: 90%;
+        margin: 0
     }
 }
 
-@media screen and (max-width: 1128px)
+@media screen and (max-width: 1131px)
 {
+    .sidebar_frame {
+        margin: 0
+    }
+    .sidebar_finances {
+        margin-top: 20px
+    }
+    .sidebar_finances_main {
+        margin: 20px 20px 0 10px
+    }
+    .sidebar_mind-blow_main {
+        margin: 20px
+    }
 }
 @media screen and (max-width: 1135px)
 {
