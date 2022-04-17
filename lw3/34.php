@@ -16,6 +16,6 @@ else
 {
     $fEmail = fopen($tmp.$email, "w+");
     fwrite($fEmail, "First name: ");
-    fwrite($fEmail, $firstName);
+    fwrite($fEmail, $firstName + PHP_EOL);
 }
-echo "\n";
+echo PHP_EOL;
