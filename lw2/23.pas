@@ -5,7 +5,7 @@ VAR
   Query, Value: STRING;
   LenValue: INTEGER;
 BEGIN {PrintHelloName}
-  WRITELN('Content-Type: text/html');
+  WRITELN('Content-Type: text/plain');
   WRITELN;
   Query := GetEnv('QUERY_STRING');
   IF Length(Query) > 0
