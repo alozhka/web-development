@@ -315,7 +315,7 @@ body
 }
 .sidebar_main_header
 {
-    margin: 224px 0 0 0;
+    margin: 0;
     font-family: 'Montserrat';
     float: none;
     font-style: normal;
@@ -479,6 +479,12 @@ body
 
 @media screen and (max-width: 610px)
 {
+    .sidebar_main_header {
+        font-size: 2em
+    }
+    .sidebar_main_text {
+        font-size: 1em
+    }
     .table-text {
         font-size: 1em
     }
@@ -528,7 +534,7 @@ body
         width: 100%
     }
     .sidebar_right_img {
-        width: 90%;
+        width: 80%;
         margin: 0
     }
 }
