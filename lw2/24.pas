@@ -14,6 +14,7 @@ BEGIN
   IF I > 0
   THEN
     BEGIN
+      I := I + Length(Key);
       WHILE I < Length(Query) + 1) AND (Query[I] <> '&')
       DO
         BEGIN
