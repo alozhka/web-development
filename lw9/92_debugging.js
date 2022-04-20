@@ -1,5 +1,5 @@
 {
-    function calc(op) {
+    function calcDebug(op) {
         let newOp= ""
         let state = "op"
         let method = ""
@@ -19,7 +19,9 @@
                         if (countBrackets >= 2) newOp += op[i]
                         countBrackets -= 1
                         if (countBrackets === 0) {
-                            ch1 = calc(newOp)
+                            console.log("newOp" + newOp)
+                            ch1 = calcDebug(newOp)
+                            console.log("ch1 " + ch1)
                             state = "op"
                         }
                         break
@@ -55,9 +57,11 @@
                             ch2 = Number(op[i])
                         if (ch1 === null)
                             ch1 = Number(op[i])
+                        console.log(ch1, ch2)
                     }
                 }
             }
+            console.log(method)
         }
 
         if (method !== "" && ch1 !== null && ch2 !== null)
