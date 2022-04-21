@@ -3,6 +3,7 @@
         let newOp= ""
         let state = "op"
         let method = ""
+        let stateCh = '1'
         let ch1 = null
         let ch2 = null
         let countBrackets = 1
@@ -19,7 +20,7 @@
                         if (countBrackets >= 2) newOp += op[i]
                         countBrackets -= 1
                         if (countBrackets === 0) {
-                            console.log("newOp" + newOp)
+                            console.log("newOp " + newOp)
                             ch1 = calcDebug(newOp)
                             console.log("ch1 " + ch1)
                             state = "op"
@@ -53,10 +54,8 @@
                         break
                     }
                     default: {
-                        if (ch1 !== null)
-                            ch2 = Number(op[i])
-                        if (ch1 === null)
-                            ch1 = Number(op[i])
+                        if (stateCh === '2') {
+                        }
                         console.log(ch1, ch2)
                     }
                 }

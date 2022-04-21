@@ -2,7 +2,9 @@
     function calc(op) {
         let newOp= ""
         let state = "op"
+        let stateCh = '1'
         let method = ""
+        let previousCh = false
         let ch1 = null
         let ch2 = null
         let countBrackets = 1
@@ -50,11 +52,16 @@
                         method = "*"
                         break
                     }
-                    default: {
-                        if (ch1 !== null)
+                    default: { //case 0 .. 9
+                        if (stateCh === '2')
                             ch2 = Number(op[i])
-                        if (ch1 === null)
+                        if (stateCh === '1')
                             ch1 = Number(op[i])
+                        if (state === '1' && previousCh)
+                            ch1 = ch1 * 10 + Number(op[i])
+                        if (state === '2' && previousCh)
+                            ch2 = ch2 * 10 + Number(op[i])
+                        previousCh = true
                     }
                 }
             }
