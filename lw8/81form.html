@@ -8,8 +8,20 @@
     <div class="form-data">
         <form method="POST" action="81register.php">
             <label>
-                <input class="form" type="text" name="name" placeholder="Ваше имя"/>
+                <input class="form-label" type="text" name="name" placeholder="{%name%}"/>
             </label>
+            <label>
+                <input class="form-label" type="text" name="email" placeholder="{%Email%}"/>
+            </label>
+            <select name="{%activity%}" class="form-label">
+                <option selected disabled>Деятельность</option>
+                <option value="programmer">Программист</option>
+                <option value="designer">Дизайнер</option>
+                <option value="marketer">Маркетолог</option>
+            </select>
+            <p>
+                <input class="submit-block" type="submit" value="Записаться на курс"/>
+            </p>
         </form>
     </div>
 </div>
