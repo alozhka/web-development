@@ -166,7 +166,7 @@
         </div>
     </div>
     <?php
-    include(form_handler.php)
+        include "form.html";
     ?>
     <div class="bottom_stripe">
         <div class="bottom_stripe-text">

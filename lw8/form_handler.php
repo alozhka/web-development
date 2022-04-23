@@ -1,5 +1,10 @@
 <?php
-header("Content-Type:text/html");
+    $form = fopen("form.html", "r");
+    $sizeForm = fgets($form, 4096);
+    if ($form)
+        while ($sizeForm !== false)
+            echo $sizeForm . PHP_EOL;
+    else
+        echo "[!] Файл не найден";
 
-echo str_replace()
-
+    fclose($form);
