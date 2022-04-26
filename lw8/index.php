@@ -5,6 +5,7 @@
     <meta charset="UTF-8"/>
     <title>Don`t do it</title>
     <link rel="stylesheet" href="styles/styles.css"/>
+    <link rel="stylesheet" href="styles/form-styles.css"/>
     <meta name="viewport" content="width=device-width"/>
 </head>
 <body>

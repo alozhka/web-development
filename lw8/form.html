@@ -2,23 +2,31 @@
     <img class="form__image"
          src="images/form-image.png"
          alt="welcome"/>
-    <div class="from-header">
-        <h3 class="from-header__text">Записаться на курс</h3>
+    <div class="form-header">
+        <h3 class="form-header__text">Записаться на курс</h3>
     </div>
     <div class="form-data">
         <form method="POST" action="register.php">
             <label>
-                <input class="form-label" type="text" name="name" placeholder="{%name%}"/>
+                <input class="form-label form-label__text" type="text" name="name" placeholder="{%name%}"/>
             </label>
             <label>
-                <input class="form-label" type="text" name="email" placeholder="{%Email%}"/>
+                <input class="form-label form-label__text" type="text" name="Email" placeholder="{%Email%}"/>
             </label>
-            <select name="{%activity%}" class="form-label">
-                <option selected disabled>Деятельность</option>
-                <option value="programmer">Программист</option>
-                <option value="designer">Дизайнер</option>
-                <option value="marketer">Маркетолог</option>
-            </select>
+            <label>
+                <select name="{%activity%}" class="form-label form-label__text">
+                    <option selected disabled>Деятельность</option>
+                    <option value="programmer">Программист</option>
+                    <option value="designer">Дизайнер</option>
+                    <option value="marketer">Маркетолог</option>
+                </select>
+            </label>
+            <div class="form-checkbox">
+                <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter" class="subscribe-block"/>
+                <label for="subscribeNews" class="form-checkbox__text">
+                    Согласен получать информационные материалы о старте курса
+                </label>
+            </div>
             <p>
                 <input class="submit-block" type="submit" value="Записаться на курс"/>
             </p>
