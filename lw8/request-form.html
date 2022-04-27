@@ -1,8 +1,10 @@
 <div class="request-main">
-    <label>
-        <input class="form-label form-label__text" type="text" name="email" placeholder="{%Email%}"/>
-    </label>
-    <p>
-        <input class="request-submit-block" type="submit" value="Получить данные"/>
-    </p>
+    <form class="request-form" method="POST" action="answerData.php">
+        <label class="request-label">
+            <input class="request-label__text" type="email" name="email" placeholder="{%Email%}"/>
+        </label>
+        <p class="request-submit__pos">
+            <input class="request-submit-block" type="submit" value="Получить данные"/>
+        </p>
+    </form>
 </div>
