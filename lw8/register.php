@@ -2,12 +2,10 @@
     header("Content-type: text/plain");
     $fileName = "data/" . $_POST["email"] . ".txt";
     $file = fopen($fileName, "w+");
-    $getParameters = ["email", "name"];
-    $printParameters = ["Email: ", "Name: "];
-    for ($i = 0; $i <= count($getParameters) - 1; $i++) {
-        $answer = $printParameters[$i] . $_POST[$getParameters[$i]] . PHP_EOL;
-        fwrite($file, $answer);
-    }
+    $answer = "Email:" . $_POST["email"] . PHP_EOL;
+    fwrite($file, $answer);
+    $answer = "Name:" . $_POST["name"] . PHP_EOL;
+    fwrite($file, $answer);
     $activity = $_POST["{%activity%}"];
     switch ($activity)
     {
