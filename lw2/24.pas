@@ -15,7 +15,7 @@ BEGIN
   THEN
     BEGIN
       I := I + Length(Key);
-      WHILE I < Length(Query) + 1) AND (Query[I] <> '&')
+      WHILE (I < Length(Query) + 1) AND (Query[I] <> '&')
       DO
         BEGIN
           Value := Value + Query[I];
