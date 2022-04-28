@@ -8,14 +8,14 @@
     <div class="form-data">
         <form method="POST" action="register.php">
             <label>
-                <input class="form-label form-label__text" type="text" name="name" placeholder="{%name%}"/>
+                <input required class="form-label form-label__text" type="text" name="name" placeholder="Имя"/>
             </label>
             <label>
-                <input class="form-label form-label__text" type="email" name="email" placeholder="{%Email%}"/>
+                <input required class="form-label form-label__text" type="email" name="email" placeholder="Email"/>
             </label>
             <label>
-                <select name="{%activity%}" class="form-label form-label__text">
-                    <option selected disabled>Деятельность</option>
+                <select required name="{%activity%}" class="form-label form-label__text">
+                    <option style="display: none" selected disabled>Деятельность</option>
                     <option value="programmer">Программист</option>
                     <option value="designer">Дизайнер</option>
                     <option value="marketer">Маркетолог</option>

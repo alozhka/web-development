@@ -11,4 +11,5 @@ else {
             echo($buffer . "<br>");
     else
         echo("Такого файла не существует!");
+    fclose($file);
 }
