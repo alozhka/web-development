@@ -1,26 +1,33 @@
 window.onload = main
 
 function main() {
+    const animationDelay = 5; //ms
     const upButton = document.getElementsByClassName('upper_frame_button')[0]
     const mainButton = document.getElementsByClassName('upper_frame_main_button')[0]
-    upButton.addEventListener('click', onButtonClick)
-    mainButton.addEventListener('click', onButtonClick)
 
     const popUp = document.createElement('div')
     let overlay = document.createElement('div')
+
+    upButton.addEventListener('click', onButtonClick)
+    mainButton.addEventListener('click', onButtonClick)
     overlay.classList.add('overlay')
     overlay.appendChild(createPopup())
     overlay.addEventListener('click', popupClose)
 
     function onButtonClick() {
         document.body.appendChild(overlay)
-        setTimeout(() => {popUp.classList.add('popUpShow')}, 50)
+        setTimeout(() => {popUp.classList.add('popUpShow')}, animationDelay)
     }
 
     function createPopup() {
         popUp.classList.add('popUp')
         popUp.innerHTML =
             '<div class="form" id="pop-up">\n' +
+            '<div class="form-crossbar">\n' +
+            '    <img class="form-crossbar__image"\n' +
+            '        alt="крестик"\n' +
+            '        src="images/cross.png"/>\n' +
+            '</div>\n' +
             '        <img class="form__image"\n' +
             '             src="images/form-image.png"\n' +
             '             alt="welcome"/>\n' +
@@ -30,14 +37,14 @@ function main() {
             '        <div class="form-data">\n' +
             '            <form method="POST" action="register.php">\n' +
             '                <label>\n' +
-            '                    <input class="form-label form-label__text" type="text" name="name" placeholder="{%name%}"/>\n' +
+            '                    <input class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
             '                </label>\n' +
             '                <label>\n' +
-            '                    <input class="form-label form-label__text" type="email" name="email" placeholder="{%Email%}"/>\n' +
+            '                    <input class="form-label form-label__text" type="email" name="email" placeholder="Email"/>\n' +
             '                </label>\n' +
             '                <label>\n' +
             '                    <select name="{%activity%}" class="form-label form-label__text">\n' +
-            '                        <option selected disabled>Деятельность</option>\n' +
+            '                        <option style="display: none" selected disabled>Деятельность</option>\n' +
             '                        <option value="programmer">Программист</option>\n' +
             '                        <option value="designer">Дизайнер</option>\n' +
             '                        <option value="marketer">Маркетолог</option>\n' +
@@ -56,11 +63,14 @@ function main() {
             '        </div>\n' +
             '    </div>'
 
+        const cross = document.getElementsByClassName('form-crossbar__image');
+        // cross.addEventListener('click', popupClose)
         return popUp
     }
 
-    function  popupClose(event) {
+    function  popupClose() {
         const overlay = document.getElementsByClassName('overlay')[0]
-        document.body.removeChild(overlay)
+        setTimeout( () => {document.body.removeChild(overlay)}, 500)
+        popUp.classList.remove('popUpShow')
     }
 }

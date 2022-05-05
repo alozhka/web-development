@@ -5,7 +5,9 @@
     align-items: center;
     flex-direction: column;
 
-    margin: 30px 0 0 0
+    margin: 15px 0 0 0;
+    max-width: 640px;
+    width: 100%;
 }
 .form-header {
     text-align: center;
@@ -16,6 +18,17 @@
     font-weight: 500;
     font-size: 26px;
     line-height: 120%
+}
+.form-crossbar {
+    margin: 0;
+
+    display: flex; justify-content: flex-end;
+    max-width: 600px;
+    width: 100%;
+}
+.form-crossbar__image {
+    max-width: 16px;
+    width: 100%
 }
 .form__image {
     max-width: 307px;
@@ -60,7 +73,6 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    /* identical to box height, or 123% */
 
     text-align: center;
     border-radius: 6px
