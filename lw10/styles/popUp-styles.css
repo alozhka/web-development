@@ -4,6 +4,7 @@
     position: absolute;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
 
@@ -13,6 +14,11 @@
     position: absolute;
     display: flex;
     justify-content: center;
+    max-width: 640px;
+    max-height: 847px;
     width: 100%;
     height: 100%;
+    transition: .4s ease-in-out;
+
+    background-color: white;
 }
