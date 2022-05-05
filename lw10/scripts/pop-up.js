@@ -15,9 +15,11 @@ function main() {
         document.body.appendChild(overlay)
     }
 
-    function createPopup () {
+    function createPopup() {
         const popUp = document.createElement('div')
         popUp.classList.add('popUp')
+        popUp.classList.add('popUpShow')
+        
         popUp.innerHTML =
             '<div class="form" id="pop-up">\n' +
             '        <img class="form__image"\n' +
@@ -54,6 +56,7 @@ function main() {
             '            </form>\n' +
             '        </div>\n' +
             '    </div>'
+
         return popUp
     }
 

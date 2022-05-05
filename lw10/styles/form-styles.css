@@ -5,9 +5,7 @@
     align-items: center;
     flex-direction: column;
 
-    margin: 30px 0 0 0;
-    transform: scale(100%);
-    transition: .4s ease-in-out;
+    margin: 30px 0 0 0
 }
 .form-header {
     text-align: center;
