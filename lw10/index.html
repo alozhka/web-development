@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>пя
+<head>
     <title>Don't do it</title>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="styles/styles.css"/>
     <link rel="stylesheet" href="styles/form-styles.css"/>
+    <link rel="stylesheet" href="styles/popUp-styles.css"/>
     <meta name="viewport" content="width=device-width"/>
 </head>
 <body>
-<script src="pop-up.js" async></script>
+<script src="scripts/pop-up.js" async></script>
 <div class="main_wrap">
     <div class="upper_frame">
         <div class="upper_frame_stripe">
@@ -23,7 +24,7 @@
                     <a class="upper_frame_stripe_text">Вопросы</a>
                     <a class="upper_frame_stripe_text">Автор</a>
                 </div>
-                <button class="upper_frame_button button">
+                <button class="upper_frame_button">
                     <a class="upper_frame_stripe_button_text">Записаться на курс</a>
                 </button>
             </div>
@@ -37,7 +38,7 @@
                     <a class="upper_frame_main_text">Онлайн-курс для творческих людей, о том, как управлять своим
                         временем</a>
                 </div>
-                <button onclick="" class="upper_frame_main_button button">
+                <button class="upper_frame_main_button">
                     <a class="upper_frame_button_text">Записаться на курс</a>
                 </button>
             </div>
@@ -166,43 +167,6 @@
             </div>
         </div>
     </div>
-<!--    form-->
-    <div class="form" id="pop-up">
-        <img class="form__image"
-             src="images/form-image.png"
-             alt="welcome"/>
-        <div class="form-header">
-            <h3 class="form-header__text">Записаться на курс</h3>
-        </div>
-        <div class="form-data">
-            <form method="POST" action="register.php">
-                <label>
-                    <input class="form-label form-label__text" type="text" name="name" placeholder="{%name%}"/>
-                </label>
-                <label>
-                    <input class="form-label form-label__text" type="email" name="email" placeholder="{%Email%}"/>
-                </label>
-                <label>
-                    <select name="{%activity%}" class="form-label form-label__text">
-                        <option selected disabled>Деятельность</option>
-                        <option value="programmer">Программист</option>
-                        <option value="designer">Дизайнер</option>
-                        <option value="marketer">Маркетолог</option>
-                    </select>
-                </label>
-                <div class="form-checkbox">
-                    <input type="checkbox" id="subscribeNews" name="subscribe" value="newsletter" class="subscribe-block"/>
-                    <label for="subscribeNews" class="form-checkbox__text">
-                        Согласен получать информационные материалы о старте курса
-                    </label>
-                </div>
-                <p>
-                    <input class="submit-block" type="submit" value="Записаться на курс"/>
-                </p>
-            </form>
-        </div>
-    </div>
-<!--    form-->
     <div class="bottom_stripe">
         <div class="bottom_stripe-text">
             <a class="bottom_stripe-text-wh">Don`t </a>
