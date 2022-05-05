@@ -6,6 +6,7 @@ function main() {
     upButton.addEventListener('click', onButtonClick)
     mainButton.addEventListener('click', onButtonClick)
 
+    const popUp = document.createElement('div')
     let overlay = document.createElement('div')
     overlay.classList.add('overlay')
     overlay.appendChild(createPopup())
@@ -13,13 +14,11 @@ function main() {
 
     function onButtonClick() {
         document.body.appendChild(overlay)
+        setTimeout(() => {popUp.classList.add('popUpShow')}, 50)
     }
 
     function createPopup() {
-        const popUp = document.createElement('div')
         popUp.classList.add('popUp')
-        popUp.classList.add('popUpShow')
-        
         popUp.innerHTML =
             '<div class="form" id="pop-up">\n' +
             '        <img class="form__image"\n' +
