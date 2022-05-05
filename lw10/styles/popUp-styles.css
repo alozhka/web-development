@@ -1,14 +1,12 @@
 .overlay {
+    top: 0;
+    left: 0;
     position: absolute;
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
-}
-.blackout {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+
     background-color: rgba(0, 0, 0, 0.37);
 }
 .popUp {
