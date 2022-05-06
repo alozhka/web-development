@@ -19,7 +19,10 @@ function main() {
 
     function onButtonClick() {
         document.body.appendChild(overlay)
-        setTimeout(() => {popUp.classList.add('popUpShow')}, animationDelay)
+        setTimeout(() => {
+            popUp.classList.add('popUpShow')
+            blackout.classList.add('blackoutShow')
+        }, animationDelay)
         const cross = document.getElementsByClassName('form-crossbar__image')[0];
         cross.addEventListener('click', popupClose)
     }
@@ -28,11 +31,11 @@ function main() {
         popUp.classList.add('popUp');
         popUp.innerHTML =
             '<div class="form" id="pop-up">\n' +
-            '<div class="form-crossbar">\n' +
-            '    <img class="form-crossbar__image"\n' +
-            '        alt="крестик"\n' +
-            '        src="images/cross.png"/>\n' +
-            '</div>\n' +
+            '    <div class="form-crossbar">\n' +
+            '        <img class="form-crossbar__image"\n' +
+            '            alt="крестик"\n' +
+            '            src="images/cross.png"/>\n' +
+            '    </div>\n' +
             '        <img class="form__image"\n' +
             '             src="images/form-image.png"\n' +
             '             alt="welcome"/>\n' +
@@ -40,15 +43,15 @@ function main() {
             '            <h3 class="form-header__text">Записаться на курс</h3>\n' +
             '        </div>\n' +
             '        <div class="form-data">\n' +
-            '            <form method="POST" action="register.php">\n' +
-            '                <label>\n' +
+            '            <form class="form-data" method="POST" action="register.php">\n' +
+            '                <label class="form-label">\n' +
             '                    <input class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
             '                </label>\n' +
-            '                <label>\n' +
+            '                <label class="form-label">\n' +
             '                    <input class="form-label form-label__text" type="email" name="email" placeholder="Email"/>\n' +
             '                </label>\n' +
-            '                <label>\n' +
-            '                    <select name="{%activity%}" class="form-label form-label__text">\n' +
+            '                <label class="form-label">\n' +
+            '                    <select name="{%activity%}" class="form-select form-label__text">\n' +
             '                        <option style="display: none" selected disabled>Деятельность</option>\n' +
             '                        <option value="programmer">Программист</option>\n' +
             '                        <option value="designer">Дизайнер</option>\n' +
@@ -73,7 +76,10 @@ function main() {
 
     function  popupClose() {
         const overlay = document.getElementsByClassName('overlay')[0]
-        setTimeout( () => {document.body.removeChild(overlay)}, 500)
+        setTimeout( () => {
+            document.body.removeChild(overlay)
+        }, 220)
         popUp.classList.remove('popUpShow')
+        blackout.classList.remove('blackoutShow')
     }
 }
