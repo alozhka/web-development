@@ -7,16 +7,21 @@ function main() {
 
     const popUp = document.createElement('div')
     let overlay = document.createElement('div')
+    const blackout = document.createElement('div');
+    blackout.classList.add('blackout');
 
     upButton.addEventListener('click', onButtonClick)
     mainButton.addEventListener('click', onButtonClick)
+    blackout.addEventListener('click', popupClose)
     overlay.classList.add('overlay')
+    overlay.appendChild(blackout)
     overlay.appendChild(createPopup())
-    overlay.addEventListener('click', popupClose)
 
     function onButtonClick() {
         document.body.appendChild(overlay)
         setTimeout(() => {popUp.classList.add('popUpShow')}, animationDelay)
+        const cross = document.getElementsByClassName('form-crossbar__image')[0];
+        cross.addEventListener('click', popupClose)
     }
 
     function createPopup() {
@@ -63,8 +68,6 @@ function main() {
             '        </div>\n' +
             '    </div>'
 
-        const cross = document.getElementsByClassName('form-crossbar__image');
-        // cross.addEventListener('click', popupClose)
         return popUp
     }
 
