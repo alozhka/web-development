@@ -20,7 +20,8 @@ function main() {
     }
 
     function createPopup() {
-        popUp.classList.add('popUp')
+        popUp.classList.add('popUp');
+        popUp.classList.add('popUpScale');
         popUp.innerHTML =
             '<div class="form" id="pop-up">\n' +
             '<div class="form-crossbar">\n' +
