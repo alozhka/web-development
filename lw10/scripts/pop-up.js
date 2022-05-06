@@ -1,7 +1,7 @@
 window.onload = main
 
 function main() {
-    const animationDelay = 5; //ms
+    const animationDelay = 1; //ms
     const upButton = document.getElementsByClassName('upper_frame_button')[0]
     const mainButton = document.getElementsByClassName('upper_frame_main_button')[0]
 
@@ -21,7 +21,6 @@ function main() {
 
     function createPopup() {
         popUp.classList.add('popUp');
-        popUp.classList.add('popUpScale');
         popUp.innerHTML =
             '<div class="form" id="pop-up">\n' +
             '<div class="form-crossbar">\n' +

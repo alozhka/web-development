@@ -7,11 +7,14 @@
     align-items: center;
     width: 100%;
     height: 100%;
-
+    background-color: rgba(0, 0, 0, 0.37);
+}
+.blackout {
+    position: relative;
     background-color: rgba(0, 0, 0, 0.37);
 }
 .popUp {
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     max-width: 640px;
@@ -20,21 +23,15 @@
     opacity: 0;
     width: 100%;
     height: 100%;
+    transform: scale(50%);
 
-    transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms ease-in-out,
+                transform 500ms ease-in-out;
 
     background-color: white;
     border-radius: 12px
 }
-.popUpScale {
-    animation-name: popUpScaling;
-    transform: scale(50%)
-}
 .popUpShow {
     opacity: 1;
     transform: scale(100%);
-}
-@keyframes popUpScaling {
-    0%   { scale: 0.5; }
-    100% { scale: 1; }
 }
