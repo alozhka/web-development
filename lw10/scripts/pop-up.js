@@ -13,9 +13,15 @@ function main() {
     upButton.addEventListener('click', onButtonClick)
     mainButton.addEventListener('click', onButtonClick)
     blackout.addEventListener('click', popupClose)
+    window.addEventListener('scroll', onWindowScroll)
     overlay.classList.add('overlay')
     overlay.appendChild(blackout)
     overlay.appendChild(createPopup())
+
+    document.addEventListener('keydown', function(event) {
+        if (event.code === 'Escape')
+            popupClose()
+    });
 
     function onButtonClick() {
         document.body.appendChild(overlay)
@@ -25,6 +31,10 @@ function main() {
         }, animationDelay)
         const cross = document.getElementsByClassName('form-crossbar__image')[0];
         cross.addEventListener('click', popupClose)
+    }
+
+    function onWindowScroll() {
+        overlay.style.top = window.scrollY + 'px'
     }
 
     function createPopup() {
