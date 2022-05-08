@@ -1,6 +1,6 @@
 <?php
     header("Content-type: text/plain");
-    if (isset($_POST["email"]))
+    if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["{%activity%}"]))
     {
         $fileName = "data/" . $_POST["email"] . ".txt";
         $file = fopen($fileName, "w+");
