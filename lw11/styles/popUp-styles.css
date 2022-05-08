@@ -1,0 +1,44 @@
+.overlay {
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.blackout {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    background-color: rgba(0, 0, 0);
+    opacity: 0;
+
+    transition: opacity 220ms ease-in-out
+}
+.blackoutShow {
+    opacity: 0.45;
+}
+.popUp {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 640px;
+    max-height: 847px;
+
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(50%);
+
+    transition: opacity 220ms ease-in-out,
+                transform 220ms ease-in-out;
+
+    background-color: white;
+    border-radius: 12px
+}
+.popUpShow {
+    opacity: 1;
+    transform: scale(100%);
+}
