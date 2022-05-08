@@ -93,8 +93,4 @@ function main() {
         blackout.classList.remove('blackoutShow')
     }
 
-    let promise = fetch('register.php', [text/plain])
-    async function doFetch() {
-        const
-    }
 }
