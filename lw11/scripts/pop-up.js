@@ -14,6 +14,7 @@ function main() {
     mainButton.addEventListener('click', onButtonClick)
     blackout.addEventListener('click', popupClose)
     window.addEventListener('scroll', onWindowScroll)
+
     overlay.classList.add('overlay')
     overlay.appendChild(blackout)
     overlay.appendChild(createPopup())
