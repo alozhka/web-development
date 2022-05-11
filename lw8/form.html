@@ -6,15 +6,15 @@
         <h3 class="form-header__text">Записаться на курс</h3>
     </div>
     <div class="form-data">
-        <form method="POST" action="register.php">
+        <form id="ajax-form" method="POST" action="">
             <label>
-                <input required class="form-label form-label__text" type="text" name="name" placeholder="Имя"/>
+                <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Имя"/>
             </label>
             <label>
-                <input required class="form-label form-label__text" type="email" name="email" placeholder="Email"/>
+                <input id="ajax-from__email" required class="form-label form-label__text" type="email" name="email" placeholder="Email"/>
             </label>
             <label>
-                <select required name="{%activity%}" class="form-label form-label__text">
+                <select id="ajax-form__activity" required name="{%activity%}" class="form-label form-label__text">
                     <option style="display: none" selected disabled>Деятельность</option>
                     <option value="programmer">Программист</option>
                     <option value="designer">Дизайнер</option>
@@ -28,7 +28,7 @@
                 </label>
             </div>
             <p>
-                <input class="submit-block" type="submit" value="Записаться на курс"/>
+                <input id="submit__button" class="submit-block" type="submit" value="Записаться на курс"/>
             </p>
         </form>
     </div>

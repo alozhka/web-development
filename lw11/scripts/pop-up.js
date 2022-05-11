@@ -93,4 +93,35 @@ function main() {
         blackout.classList.remove('blackoutShow')
     }
 
+<<<<<<< HEAD
+    const name = document.getElementById('ajax-form__name')
+    const email = document.getElementById('ajax-from__email')
+    const sendFormButton = document.getElementById('ajax-form')
+
+    sendFormButton.addEventListener('click', sendForm)
+
+    function validation() {
+        if(email.validity.typeMismatch) {
+            showError(email);
+            return false;
+        } else if (email.validity.valueMissing) {
+            showError(email);
+            return false;
+        }
+        return true;
+    }
+
+    function sendForm() {
+        if (validation()) {
+            let data = JSON.stringify({
+                name: document.getElementById('ajax-form_name').value,
+                email: document.getElementById('ajax-form_email').value
+            })
+        }
+=======
+    let promise = fetch('register.php', [text/plain])
+    async function doFetch() {
+        const
+>>>>>>> parent of bfff8fc (godness promise)
+    }
 }
