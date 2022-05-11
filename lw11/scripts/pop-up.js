@@ -93,7 +93,6 @@ function main() {
         blackout.classList.remove('blackoutShow')
     }
 
-<<<<<<< HEAD
     const name = document.getElementById('ajax-form__name')
     const email = document.getElementById('ajax-from__email')
     const sendFormButton = document.getElementById('ajax-form')
@@ -118,10 +117,5 @@ function main() {
                 email: document.getElementById('ajax-form_email').value
             })
         }
-=======
-    let promise = fetch('register.php', [text/plain])
-    async function doFetch() {
-        const
->>>>>>> parent of bfff8fc (godness promise)
     }
 }
