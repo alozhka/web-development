@@ -1,6 +1,8 @@
 window.onload = main
 
 function main() {
+    debugger
+
     const animationDelay = 1; //ms
     const upButton = document.getElementsByClassName('upper_frame_button')[0]
     const mainButton = document.getElementsByClassName('upper_frame_main_button')[0]
@@ -53,12 +55,12 @@ function main() {
             '            <h3 class="form-header__text">Записаться на курс</h3>\n' +
             '        </div>\n' +
             '        <div class="form-data">\n' +
-            '            <form class="form-data" method="POST" action="register.php">\n' +
+            '            <form id="ajax-form" class="form-data" method="POST" action="">\n' +
             '                <label class="form-label">\n' +
-            '                    <input class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
+            '                    <input id="ajax-form__name" class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
-            '                    <input class="form-label form-label__text" type="email" name="email" placeholder="Email"/>\n' +
+            '                    <input id="ajax-form__email" class="form-label form-label__text" type="email" name="email" placeholder="Email"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
             '                    <select name="{%activity%}" class="form-select form-label__text">\n' +
@@ -75,12 +77,15 @@ function main() {
             '                    </label>\n' +
             '                </div>\n' +
             '                <p>\n' +
-            '                    <input class="submit-block" type="submit" value="Записаться на курс"/>\n' +
+            '                    <input id="submit__button" class="submit-block" type="submit" value="Записаться на курс"/>\n' +
             '                </p>\n' +
             '            </form>\n' +
             '        </div>\n' +
             '    </div>'
 
+        const name = document.getElementById('ajax-form__name')
+        const email = document.getElementById('ajax-from__email')
+        const sendFormButton = document.getElementById('submit__button')
         return popUp
     }
 
@@ -93,29 +98,53 @@ function main() {
         blackout.classList.remove('blackoutShow')
     }
 
-    const name = document.getElementById('ajax-form__name')
-    const email = document.getElementById('ajax-from__email')
-    const sendFormButton = document.getElementById('ajax-form')
+//      *ajax       *//
+    
 
-    sendFormButton.addEventListener('click', sendForm)
 
     function validation() {
         if(email.validity.typeMismatch) {
             showError(email);
             return false;
-        } else if (email.validity.valueMissing) {
+        }
+        if (email.validity.valueMissing) {
             showError(email);
             return false;
         }
         return true;
     }
 
-    function sendForm() {
+    async function sendForm() {
         if (validation()) {
             let data = JSON.stringify({
-                name: document.getElementById('ajax-form_name').value,
-                email: document.getElementById('ajax-form_email').value
+                name: name.value,
+                email: email.value
             })
+            setTimeout(() => console.log('+'), 3000)
         }
+        const response = await fetch('register.php', {
+            method: 'POST', //мы отправляем данные на сервер, значит POST
+            body: data, // отправляем ранее созданный json объект data
+            headers: {
+                'Content-Type': 'application/json' //отправляем заголовки запроса
+            }
+        })
+            .then(response => response.json())
+
+
+        if (response.ok) {
+            // если HTTP-статус в диапазоне 200-299
+            popupClose();
+            alert('closed')//4. В случае успешного результата попап с формой должен закрыться.
+        } else if (response.status === 500) {
+            // иначе, что-то пошло не так, говорим об этом пользователю.
+            alert('В случае 500 ошибки все элементы попапа удаляются и появляется сообщение: Упс… Произошла ошибка!');
+        } else {
+            alert('Код ошибки: '.response.status);
+        }
+    }
+
+    function showError(e) {
+        e.classList.add('form-error')
     }
 }

@@ -9,6 +9,9 @@
     max-width: 640px;
     width: 100%;
 }
+.form-error {
+    border-color: red
+}
 .form-header {
     text-align: center;
 }
