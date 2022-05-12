@@ -99,8 +99,6 @@ function main() {
     }
 
 //      *ajax       *//
-    
-
 
     function validation() {
         if(email.validity.typeMismatch) {
