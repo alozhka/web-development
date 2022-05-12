@@ -86,6 +86,7 @@ function main() {
         const name = document.getElementById('ajax-form__name')
         const email = document.getElementById('ajax-from__email')
         const sendFormButton = document.getElementById('submit__button')
+        //всю логику сюда
         return popUp
     }
 
