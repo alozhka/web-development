@@ -31,8 +31,13 @@ function main() {
             popUp.classList.add('popUpShow')
             blackout.classList.add('blackoutShow')
         }, animationDelay)
+
         const cross = document.getElementsByClassName('form-crossbar__image')[0];
         cross.addEventListener('click', popupClose)
+
+        const sendFormButton = document.getElementById('submit__button')
+        sendFormButton.addEventListener('click', sendForm)
+        //всю логику сюда
     }
 
     function onWindowScroll() {
@@ -82,11 +87,6 @@ function main() {
             '            </form>\n' +
             '        </div>\n' +
             '    </div>'
-
-        const name = document.getElementById('ajax-form__name')
-        const email = document.getElementById('ajax-from__email')
-        const sendFormButton = document.getElementById('submit__button')
-        //всю логику сюда
         return popUp
     }
 
@@ -101,25 +101,26 @@ function main() {
 
 //      *ajax       *//
 
-    function validation() {
-        if(email.validity.typeMismatch) {
-            showError(email);
+    function validation(e) {
+        if(e.validity.typeMismatch) {
+            showError(e);
             return false;
         }
-        if (email.validity.valueMissing) {
-            showError(email);
+        if (e.validity.valueMissing) {
+            showError(e);
             return false;
         }
         return true;
     }
 
     async function sendForm() {
-        if (validation()) {
+        /*const name = document.getElementById('ajax-form__name')
+        const email = document.getElementById('ajax-from__email')*/
+        if (validation(name) && validation(email)) {
             let data = JSON.stringify({
                 name: name.value,
                 email: email.value
             })
-            setTimeout(() => console.log('+'), 3000)
         }
         const response = await fetch('register.php', {
             method: 'POST', //мы отправляем данные на сервер, значит POST
@@ -128,7 +129,7 @@ function main() {
                 'Content-Type': 'application/json' //отправляем заголовки запроса
             }
         })
-            .then(response => response.json())
+            .then((response) => response.json())
 
 
         if (response.ok) {
