@@ -129,7 +129,7 @@ function main() {
             try {
                 let response = await fetch(document.forms.user.action, {
                     method: 'post',
-                    body: new FormData(document.forms.user)
+                    body: data
                 });
                 if (response.ok) {
                     let result = await response.json();
