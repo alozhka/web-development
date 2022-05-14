@@ -116,9 +116,9 @@ function main() {
     async function sendForm(Event) {
         Event.preventDefault()
         const name = document.getElementById('ajax-form__name')
-        const email = document.getElementById('ajax-from__email')
+        const email = document.getElementById('ajax-form__email')
 
-        if (validation(name)) {
+        if (validation(name) && validation(email)) {
             let data = JSON.stringify({
                 name: name.value,
                 email: email.value
