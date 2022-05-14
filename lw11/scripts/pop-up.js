@@ -113,43 +113,16 @@ function main() {
         return true;
     }
 
-    function sendForm(e) {
-        e.preventDefault()
+    async function sendForm(Event) {
+        Event.preventDefault()
         const name = document.getElementById('ajax-form__name')
         const email = document.getElementById('ajax-from__email')
 
-        if (validation(name) && validation(email)) {
+        if (validation(name)) {
             let data = JSON.stringify({
                 name: name.value,
                 email: email.value
             })
-        }
-
-        const sendUser = async () => {
-            try {
-                let response = await fetch(document.forms.user.action, {
-                    method: 'post',
-                    body: data
-                });
-                if (response.ok) {
-                    let result = await response.json();
-                    document.forms.user.querySelectorAll('.error').forEach(el => {
-                        el.textContent = '';
-                    })
-                    if (result['result'] === 'error') {
-                        const errors = result['error'];
-                        for (const [key, value] of Object.entries(errors)) {
-                            document.forms.user.querySelector(`[name="${key}"]`).nextElementSibling.textContent = value;
-                        }
-                    } else {
-                        document.forms.user.reset();
-                        document.forms.user.closest('.form-wrapper').classList.add('form-success');
-                    }
-                }
-            }
-            catch (error) {
-                console.log(error);
-            }
         }
 
         const response = await fetch('register.php', {
