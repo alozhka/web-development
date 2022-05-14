@@ -68,7 +68,7 @@ function main() {
             '                    <input id="ajax-form__email" class="form-label form-label__text" type="email" name="email" placeholder="Email"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
-            '                    <select name="{%activity%}" class="form-select form-label__text">\n' +
+            '                    <select id="ajax-form__activity" name="{%activity%}" class="form-select form-label__text">\n' +
             '                        <option style="display: none" selected disabled>Деятельность</option>\n' +
             '                        <option value="programmer">Программист</option>\n' +
             '                        <option value="designer">Дизайнер</option>\n' +
@@ -117,35 +117,40 @@ function main() {
         Event.preventDefault()
         const name = document.getElementById('ajax-form__name')
         const email = document.getElementById('ajax-form__email')
+        const news = document.getElementById('subscribeNews')
+        const activity = document.getElementById('ajax-form__activity')
 
         if (validation(name) && validation(email)) {
+            // 1. - Чтобы имя состояло только из буквенных символов, иначе подсвечивается красным после нажатия на кнопку
+            // 2. + Email проверялся на валидность, в случае невалидности подсвечивается красным после нажатия на кнопку
+            // 3. + Если поле пустое, то поле подсвечивается красным, как в дизайне.
+
             let data = JSON.stringify({
                 name: name.value,
-                email: email.value
-            })
-        }
+                email: email.value,
+                
+            });
 
-        const response = await fetch('register.php', {
-            method: 'POST', //мы отправляем данные на сервер, значит POST
-            body: data, // for some reason is not defined in response block
-            headers: {
-                'Content-Type': 'application/json' //отправляем заголовки запроса
+            const response = await fetch('/lw11/register.php', {
+                method: 'POST', //мы отправляем данные на сервер, значит POST
+                body: data, // отправляем ранее созданный json объект data
+                headers: {
+                    'Content-Type': 'application/json' //отправляем заголовки запроса
+                }
+            });
+
+            if (response.ok) {
+                // если HTTP-статус в диапазоне 200-299
+                alert('4. В случае успешного результата попап с формой должен закрыться. ');
+            } else if (response.status === 500) {
+                // иначе, что-то пошло не так, говорим об этом пользователю.
+                alert('В случае 500 ошибки все элементы попапа удаляются и появляется сообщение: Упс… Произошла ошибка!');
+            } else {
+                alert('Код ошибки: '.response.status);
             }
-        })
-            .then((response) => response.json())
-
-
-        if (response.ok) {
-            // если HTTP-статус в диапазоне 200-299
-            popupClose();
-            alert('closed')//4. В случае успешного результата попап с формой должен закрыться.
-        } else if (response.status === 500) {
-            // иначе, что-то пошло не так, говорим об этом пользователю.
-            alert('В случае 500 ошибки все элементы попапа удаляются и появляется сообщение: Упс… Произошла ошибка!');
-        } else {
-            alert('Код ошибки: '.response.status);
         }
     }
+
 
     function showError(e) {
         e.classList.add('form-error')
