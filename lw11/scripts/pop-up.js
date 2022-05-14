@@ -127,7 +127,7 @@ function main() {
 
         const response = await fetch('register.php', {
             method: 'POST', //мы отправляем данные на сервер, значит POST
-            body: data, // отправляем ранее созданный json объект data
+            body: data, // for some reason is not defined in response block
             headers: {
                 'Content-Type': 'application/json' //отправляем заголовки запроса
             }
