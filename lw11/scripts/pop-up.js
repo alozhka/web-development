@@ -37,7 +37,6 @@ function main() {
 
         const sendFormButton = document.getElementById('submit__button')
         sendFormButton.addEventListener('click', sendForm)
-        //всю логику сюда
     }
 
     function onWindowScroll() {
@@ -62,13 +61,13 @@ function main() {
             '        <div class="form-data">\n' +
             '            <form id="ajax-form" class="form-data" method="POST" action="">\n' +
             '                <label class="form-label">\n' +
-            '                    <input id="ajax-form__name" class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
+            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
-            '                    <input id="ajax-form__email" class="form-label form-label__text" type="email" name="email" placeholder="Email"/>\n' +
+            '                    <input id="ajax-form__email" required class="form-label form-label__text" type="email" name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{1,63}$"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
-            '                    <select id="ajax-form__activity" name="{%activity%}" class="form-select form-label__text">\n' +
+            '                    <select required id="ajax-form__activity" name="{%activity%}" class="form-select form-label__text">\n' +
             '                        <option style="display: none" selected disabled>Деятельность</option>\n' +
             '                        <option value="programmer">Программист</option>\n' +
             '                        <option value="designer">Дизайнер</option>\n' +
@@ -101,18 +100,6 @@ function main() {
 
 //*      ajax       *//
 
-    function validation(e) {
-        if(e.validity.typeMismatch) {
-            showError(e);
-            return false;
-        }
-        if (e.validity.valueMissing) {
-            showError(e);
-            return false;
-        }
-        return true;
-    }
-
     async function sendForm(Event) {
         Event.preventDefault()
         const name = document.getElementById('ajax-form__name')
@@ -120,7 +107,7 @@ function main() {
         const news = document.getElementById('subscribeNews')
         const activity = document.getElementById('ajax-form__activity')
 
-        if (validation(name) && validation(email)) {
+        if (validation(name) && validation(email) && validation(activity)) {
             // 1. - Чтобы имя состояло только из буквенных символов, иначе подсвечивается красным после нажатия на кнопку
             // 2. + Email проверялся на валидность, в случае невалидности подсвечивается красным после нажатия на кнопку
             // 3. + Если поле пустое, то поле подсвечивается красным, как в дизайне.
@@ -128,7 +115,7 @@ function main() {
             let data = JSON.stringify({
                 name: name.value,
                 email: email.value,
-                
+                activity: activity.value
             });
 
             const response = await fetch('/lw11/register.php', {
@@ -142,6 +129,7 @@ function main() {
             if (response.ok) {
                 // если HTTP-статус в диапазоне 200-299
                 alert('4. В случае успешного результата попап с формой должен закрыться. ');
+                popupClose()
             } else if (response.status === 500) {
                 // иначе, что-то пошло не так, говорим об этом пользователю.
                 alert('В случае 500 ошибки все элементы попапа удаляются и появляется сообщение: Упс… Произошла ошибка!');
@@ -151,8 +139,22 @@ function main() {
         }
     }
 
+    function validation(e) {
+        if(e.validity.typeMismatch) {
+            showError(e);
+            return false;
+        } else if (e.validity.valueMissing) {
+            showError(e);
+            return false;
+        }
+        return true;
+    }
 
     function showError(e) {
         e.classList.add('form-error')
+    }
+
+    function removeError(e) {
+        e.classList.remove('form-error')
     }
 }
