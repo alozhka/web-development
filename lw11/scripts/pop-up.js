@@ -61,7 +61,7 @@ function main() {
             '        <div class="form-data">\n' +
             '            <form id="ajax-form" class="form-data" method="POST" action="">\n' +
             '                <label class="form-label">\n' +
-            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя"/>\n' +
+            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя" pattern="[A-Za-ZА-Яа-я]"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
             '                    <input id="ajax-form__email" required class="form-label form-label__text" type="email" name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{1,63}$"/>\n' +
@@ -152,9 +152,5 @@ function main() {
 
     function showError(e) {
         e.classList.add('form-error')
-    }
-
-    function removeError(e) {
-        e.classList.remove('form-error')
     }
 }
