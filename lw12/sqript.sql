@@ -4,7 +4,7 @@ CREATE TABLE students
 (
 	id 			INT AUTO_INCREMENT 	NOT NULL,
 	name 		VARCHAR(32) 		NOT NULL,
-	surnname 	VARCHAR(32) 		NOT NULL,
+	surname 	VARCHAR(32) 		NOT NULL,
     age 		INT					NOT NULL,
     group_id	INT 				NOT NULL,
     PRIMARY KEY(id)
