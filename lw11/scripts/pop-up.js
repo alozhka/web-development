@@ -20,6 +20,10 @@ function main() {
     overlay.appendChild(blackout)
     overlay.appendChild(createPopup())
 
+    const errorMassage = document.createElement('div')
+    errorMassage.innerHTML =
+        `<p class="error-message">Упс.. Произошла ошибка!</p>`
+
     document.addEventListener('keydown', function(event) {
         if (event.code === 'Escape')
             popupClose()
@@ -61,7 +65,7 @@ function main() {
             '        <div class="form-data">\n' +
             '            <form id="ajax-form" class="form-data" method="POST" action="">\n' +
             '                <label class="form-label">\n' +
-            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя" pattern="[A-Za-ZА-Яа-я]"/>\n' +
+            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя" pattern="[A-Za-ZА-Яа-я]+"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
             '                    <input id="ajax-form__email" required class="form-label form-label__text" type="email" name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{1,63}$"/>\n' +
@@ -98,6 +102,10 @@ function main() {
         blackout.classList.remove('blackoutShow')
     }
 
+    function errorMessage () {
+        overlay.removeChild(popUp)
+        overlay.appendChild()
+    }
 //*      ajax       *//
 
     async function sendForm(Event) {
@@ -107,7 +115,7 @@ function main() {
         const news = document.getElementById('subscribeNews')
         const activity = document.getElementById('ajax-form__activity')
 
-        if (validation(name) && validation(email) && validation(activity)) {
+        if (validation(event, name) && validation(event, email) && validation(event, activity)) {
             // 1. - Чтобы имя состояло только из буквенных символов, иначе подсвечивается красным после нажатия на кнопку
             // 2. + Email проверялся на валидность, в случае невалидности подсвечивается красным после нажатия на кнопку
             // 3. + Если поле пустое, то поле подсвечивается красным, как в дизайне.
@@ -115,7 +123,8 @@ function main() {
             let data = JSON.stringify({
                 name: name.value,
                 email: email.value,
-                activity: activity.value
+                activity: activity.value,
+                news: news.value
             });
 
             const response = await fetch('/lw11/register.php', {
@@ -139,8 +148,8 @@ function main() {
         }
     }
 
-    function validation(e) {
-        if(e.validity.typeMismatch) {
+    function validation(event, e) {
+        if(e.validity.patternMismatch) {
             showError(e);
             return false;
         } else if (e.validity.valueMissing) {
