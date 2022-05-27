@@ -67,7 +67,7 @@ function main() {
             '        <div class="form-data">\n' +
             '            <form id="ajax-form" class="form-data" method="POST" action="">\n' +
             '                <label class="form-label">\n' +
-            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя" pattern="[A-Za-ZА-Яа-я]+"/>\n' +
+            '                    <input id="ajax-form__name" required class="form-label form-label__text" type="text" name="name" placeholder="Ваше имя" pattern="[А-Яа-я]+"/>\n' +
             '                </label>\n' +
             '                <label class="form-label">\n' +
             '                    <input id="ajax-form__email" required class="form-label form-label__text" type="email" name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{1,63}$"/>\n' +
@@ -100,14 +100,14 @@ function main() {
         const overlay = document.getElementsByClassName('overlay')[0]
         setTimeout( () => {
             document.body.removeChild(overlay)
+            if (errorStatus === true) {
+                popUp.removeChild(errorMassage)
+                popUp.appendChild(form)
+                errorStatus = false
+            }
         }, 220)
         popUp.classList.remove('popUpShow')
         blackout.classList.remove('blackoutShow')
-        if (errorStatus === true) {
-            popUp.removeChild(errorMassage)
-            popUp.appendChild(form)
-            errorStatus = false
-        }
     }
 
     function showErrorMessage () {
@@ -144,17 +144,14 @@ function main() {
                 }
             });
 
-            if (response.ok) {
+            if (response.ok)
                 // если HTTP-статус в диапазоне 200-299
-                alert('4. В случае успешного результата попап с формой должен закрыться. ');
                 popupClose()
-            } else if (response.status === 500) {
+            else if (response.status === 500)
                 // иначе, что-то пошло не так, говорим об этом пользователю.
-                alert('В случае 500 ошибки все элементы попапа удаляются и появляется сообщение: Упс… Произошла ошибка!');
                 showErrorMessage()
-            } else {
+            else
                 alert('Код ошибки: '.response.status);
-            }
         }
     }
 
