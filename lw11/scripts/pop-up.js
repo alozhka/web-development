@@ -124,7 +124,7 @@ function main() {
         const news = document.getElementById('subscribeNews')
         const activity = document.getElementById('ajax-form__activity')
 
-        if (validation(event, name) && validation(event, email) && validation(event, activity)) {
+        if (validation(name) && validation(email) && validation(activity)) {
             // 1. - Чтобы имя состояло только из буквенных символов, иначе подсвечивается красным после нажатия на кнопку
             // 2. + Email проверялся на валидность, в случае невалидности подсвечивается красным после нажатия на кнопку
             // 3. + Если поле пустое, то поле подсвечивается красным, как в дизайне.
@@ -136,7 +136,7 @@ function main() {
                 news: news.value
             });
 
-            const response = await fetch('/lw11/register.php', {
+            const response = await fetch('register.php', {
                 method: 'POST', //мы отправляем данные на сервер, значит POST
                 body: data, // отправляем ранее созданный json объект data
                 headers: {
@@ -155,7 +155,7 @@ function main() {
         }
     }
 
-    function validation(event, e) {
+    function validation(e) {
         if(e.validity.patternMismatch) {
             showError(e);
             return false;
