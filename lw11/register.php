@@ -43,5 +43,5 @@ if ( ($name === '') || ($email === '') )
 
     fclose($fp);
 }
-
+http_response_code(500);
 echo json_encode($json, JSON_UNESCAPED_UNICODE);

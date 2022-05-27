@@ -4,10 +4,12 @@ function main() {
     debugger
 
     const animationDelay = 1; //ms
+    let errorStatus = false;
     const upButton = document.getElementsByClassName('upper_frame_button')[0]
     const mainButton = document.getElementsByClassName('upper_frame_main_button')[0]
 
     const popUp = document.createElement('div')
+    const form = document.createElement('div')
     let overlay = document.createElement('div')
     const blackout = document.createElement('div');
     blackout.classList.add('blackout');
@@ -49,7 +51,7 @@ function main() {
 
     function createPopup() {
         popUp.classList.add('popUp');
-        popUp.innerHTML =
+        form.innerHTML =
             '<div class="form" id="pop-up">\n' +
             '    <div class="form-crossbar">\n' +
             '        <img class="form-crossbar__image"\n' +
@@ -90,6 +92,7 @@ function main() {
             '            </form>\n' +
             '        </div>\n' +
             '    </div>'
+        popUp.appendChild(form)
         return popUp
     }
 
@@ -100,11 +103,17 @@ function main() {
         }, 220)
         popUp.classList.remove('popUpShow')
         blackout.classList.remove('blackoutShow')
+        if (errorStatus === true) {
+            popUp.removeChild(errorMassage)
+            popUp.appendChild(form)
+            errorStatus = false
+        }
     }
 
-    function errorMessage () {
-        overlay.removeChild(popUp)
-        overlay.appendChild()
+    function showErrorMessage () {
+        popUp.removeChild(form)
+        popUp.appendChild(errorMassage)
+        errorStatus = true
     }
 //*      ajax       *//
 
@@ -142,6 +151,7 @@ function main() {
             } else if (response.status === 500) {
                 // иначе, что-то пошло не так, говорим об этом пользователю.
                 alert('В случае 500 ошибки все элементы попапа удаляются и появляется сообщение: Упс… Произошла ошибка!');
+                showErrorMessage()
             } else {
                 alert('Код ошибки: '.response.status);
             }
