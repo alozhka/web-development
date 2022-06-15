@@ -52,7 +52,7 @@
     <div class="black_frame_collumns">
         <div class="black_frame_col">
             <img class="black_frame_column_img"
-                 src="images/time.png"
+                 src="images/time.webp"
                  alt="time image"
                  loading="lazy"/>
             <div class="black_frame_text_time">
@@ -61,7 +61,7 @@
         </div>
         <div class="black_frame_col">
             <img class="black_frame_column_img"
-                 src="images/notebook.png"
+                 src="images/notebook.webp"
                  alt="notebook image"
                  loading="lazy"/>
             <div class="black_frame_text_notebook">
@@ -70,7 +70,7 @@
         </div>
         <div class="black_frame_col">
             <img class="black_frame_column_img"
-                 src="images/target.png"
+                 src="images/target.webp"
                  alt="target image"
                  loading="lazy"/>
             <div class="black_frame_text_target">
