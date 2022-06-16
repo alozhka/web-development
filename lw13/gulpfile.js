@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-//var browserSync = require('browser-sync').create();
 //minify js
 const uglifyjs = require('uglify-js');
 const composer = require('gulp-uglify/composer');
@@ -10,19 +9,24 @@ const { src, dest } = require('gulp');
 const concat = require('gulp-concat');
 //minify css
 const cleanCSS = require('gulp-clean-css');
+//minify html
+const minifyHTML = require('html-minifier').minify;
 
 
-const cssBundle = () =>
+gulp.task('compress_html', () => {
+    minifyHTML(src('index.php'), {
+        removeAttributeQuotes: true
+    })
+        .pipe(gulp.dest('dist'))
+});
+gulp.task( 'merge_css', () =>
     src([
-        'src/css/bootstrap.css',
-        'src/css/fontawesome.css',
-        'src/css/brands.css',
-        'src/css/solid.css',
-        'src/css/carousel.css',
+        'styles/popUp-styles.css',
+        'styles/form-styles.css'
     ])
-        .pipe(concat('styles.css'))
-        .pipe(dest('dist/css'));
-exports.cssBundle = cssBundle;
+        .pipe(concat('secStyle.css'))
+        .pipe(dest('dist/css'))
+);
 
 gulp.task('compress_css', () => {
     return gulp.src('styles/*.css')
@@ -31,7 +35,6 @@ gulp.task('compress_css', () => {
 });
  
 gulp.task('compress_js', function (cb) {
-  // the same options as described above
   const options = {};
  
   pump([
@@ -41,22 +44,4 @@ gulp.task('compress_js', function (cb) {
     ],
     cb
   );
-});
-
-/*gulp.task('serve', function(done) {
-
-    browserSync.init({
-        server: ""
-    });
-
-    gulp.watch("scripts/*.js", gulp.series('js'));
-    gulp.watch("*.html").on('change', () => {
-      browserSync.reload();
-      done();
-    });
-  
-
-    done();
-});
-
-gulp.task('default', gulp.series('js', 'serve'));*/
+})
